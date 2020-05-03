@@ -1,0 +1,83 @@
+[System]
+Name='fuzzy_123180018'
+Type='mamdani'
+Version=2.0
+NumInputs=3
+NumOutputs=1
+NumRules=36
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='CurahHujan'
+Range=[0 100]
+NumMFs=3
+MF1='Gerimis':'trapmf',[-40 -20 20 40]
+MF2='Sedang':'trimf',[30 55 80]
+MF3='Deras':'trapmf',[40 60 100 120]
+
+[Input2]
+Name='DebitSungai'
+Range=[0 15]
+NumMFs=3
+MF1='Rendah':'trapmf',[-7 -3.5 3.5 7]
+MF2='Sedang':'trimf',[4 7 10]
+MF3='Tinggi':'trapmf',[7 10 20 27]
+
+[Input3]
+Name='LamaHujan'
+Range=[0 120]
+NumMFs=4
+MF1='Sebentar':'trapmf',[-45 -22.5 22.5 45]
+MF2='CukupLama':'trimf',[30 45 60]
+MF3='Lama':'trimf',[45 67.5 90]
+MF4='SangatLama':'trapmf',[60 90 180 240]
+
+[Output1]
+Name='PrediksiBanjir'
+Range=[0 1]
+NumMFs=3
+MF1='TidakBanjir':'trapmf',[-0.4 -0.2 0.2 0.4]
+MF2='BanjirSedang':'trimf',[0.3 0.55 0.8]
+MF3='BanjirBesar':'trapmf',[0.6 0.75 1.5 2]
+
+[Rules]
+1 1 1, 1 (1) : 1
+1 2 1, 1 (1) : 1
+1 3 1, 1 (1) : 1
+1 1 2, 1 (1) : 1
+1 2 2, 1 (1) : 1
+1 3 2, 2 (1) : 1
+1 1 3, 1 (1) : 1
+1 2 3, 2 (1) : 1
+1 3 3, 3 (1) : 1
+1 1 4, 1 (1) : 1
+1 2 4, 2 (1) : 1
+1 3 4, 3 (1) : 1
+2 1 1, 1 (1) : 1
+2 2 1, 1 (1) : 1
+2 3 1, 2 (1) : 1
+2 1 2, 2 (1) : 1
+2 2 2, 2 (1) : 1
+2 3 2, 3 (1) : 1
+2 1 3, 2 (1) : 1
+2 2 3, 2 (1) : 1
+2 3 3, 3 (1) : 1
+2 1 4, 2 (1) : 1
+2 2 4, 3 (1) : 1
+2 3 4, 3 (1) : 1
+3 1 1, 1 (1) : 1
+3 2 1, 2 (1) : 1
+3 3 1, 3 (1) : 1
+3 1 2, 2 (1) : 1
+3 2 2, 3 (1) : 1
+3 3 2, 3 (1) : 1
+3 1 3, 3 (1) : 1
+3 2 3, 3 (1) : 1
+3 3 3, 3 (1) : 1
+3 1 4, 3 (1) : 1
+3 2 4, 3 (1) : 1
+3 3 4, 3 (1) : 1
